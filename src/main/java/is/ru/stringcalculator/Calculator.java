@@ -18,6 +18,12 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
+		if (numbers.startsWith("//")) {
+			String customDelimiter = "";
+			customDelimiter += numbers.charAt(2);
+			String newNumbers = numbers.substring(4);
+			return newNumbers.split(customDelimiter);
+		}
 	    return numbers.split(",|\n");
 	}
       
