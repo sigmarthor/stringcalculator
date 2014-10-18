@@ -31,7 +31,9 @@ public class Calculator {
  	    negativeNumberCheck(numbers);
  	    int total = 0;
         for(String number : numbers){
-		    total += toInt(number);
+        	if (toInt(number) <= 1000) {
+			    total += toInt(number);
+			}
 		}
 		return total;
     }

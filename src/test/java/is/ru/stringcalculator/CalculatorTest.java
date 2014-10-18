@@ -41,6 +41,11 @@ public class CalculatorTest {
 
     @Test(expected=Exception.class)
     public void testNegativeNumberException() throws Exception {
-    	assertEquals("Negatives not allowed: -1, -18, -42", Calculator.add("-1,2,-18,20,30,-41"));
+    	Calculator.add("-1,2,-18,20");
+    }
+
+    @Test
+    public void testExcludeNumbersOver1000() throws Exception {
+    	assertEquals(2, Calculator.add("1001,2"));
     }
 }
